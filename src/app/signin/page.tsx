@@ -2,10 +2,10 @@
 
 import { Box } from "@mui/material";
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import SignInForm from "../../components/SignInForm";
-import { signIn } from "../../firebase/auth"
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import SignInForm from "@/components/SignInForm";
+import { signIn } from "@/firebase/auth"
 
 export default function SignIn() {
   return (
@@ -18,7 +18,7 @@ export default function SignIn() {
       }}
     >
       <Box sx={{ position: "sticky", top: 0, zIndex: 1, width: "100%" }}>
-        <Header />
+        <Header heading={"Premier League Big6"} />
       </Box>
       <Box sx={{
           flex: 1,

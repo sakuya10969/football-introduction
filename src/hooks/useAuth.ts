@@ -5,7 +5,6 @@ import auth from "../firebase/firebase.config";
 type UseAuth = {
     user: User | null;
     loading: boolean;
-
 }
 
 const useAuth = (): UseAuth => {

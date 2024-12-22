@@ -5,12 +5,18 @@ import React from "react";
 import { AppBar, Toolbar, IconButton, Typography, Box, Button } from "@mui/material";
 import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import Link from "next/link";
-import useAuth from "../hooks/useAuth";
-import auth from "../firebase/firebase.config";
+import useAuth from "@/hooks/useAuth";
+import auth from "@/firebase/firebase.config";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 
-const Header = () => {
+type HeaderProps = {
+    heading: string;
+    color?: string;
+    backgroundColor?: string;
+}
+
+const Header = ({ heading, color="white", backgroundColor="black" }: HeaderProps) => {
     const { user, loading } = useAuth();
     const router = useRouter();
     const handleSignOut = async () => {
@@ -22,14 +28,14 @@ const Header = () => {
     }
 
     return (
-        <AppBar component="header" position="static" sx={{ color: "white", backgroundColor: "black" }}>
+        <AppBar component="header" position="static" sx={{ color: color, backgroundColor: backgroundColor, width: "100%" }}>
             <Toolbar sx={{ justifyContent: "space-between" }}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                     <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 1 }}>
                         <SportsSoccerIcon fontSize="large" />
                     </IconButton>
                     <Typography variant="h6">
-                        Premier League Big6
+                        {heading}
                     </Typography>
                 </Box>
 

@@ -18,7 +18,7 @@ export default function SignUp() {
       }}
     >
       <Box sx={{ position: "sticky", top: 0, zIndex: 1, width: "100%" }}>
-        <Header />
+        <Header heading={"Premier League Big6"} />
       </Box>
       <Box sx={{
           flex: 1,

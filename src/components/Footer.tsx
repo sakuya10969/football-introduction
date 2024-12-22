@@ -1,7 +1,12 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 
-const Footer = () => {
+type FooterProps = {
+  color?: string;
+  backgroundColor?: string;
+}
+
+const Footer = ({ color="white", backgroundColor="black" }: FooterProps) => {
   return (
       <AppBar
       component="footer"
@@ -9,8 +14,8 @@ const Footer = () => {
       sx={{
         top: "auto",
         bottom: 0,
-        backgroundColor: "black",
-        color: "white",
+        color: color,
+        backgroundColor: backgroundColor,
       }}
     >
       <Toolbar sx={{ justifyContent: "center", flexDirection: "column" }}>

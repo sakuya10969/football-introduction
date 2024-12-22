@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import PremierLeagueLogo from "../components/PremierLeagueLogo";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import PremierLeagueLogo from "@/components/PremierLeagueLogo";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       }}
     >
       <Box sx={{ position: "sticky", top: 0, zIndex: 1, width: "100%" }}>
-        <Header />
+        <Header heading={"Premier League Big6"} />
       </Box>
       <Box sx={{
           flex: 1,
