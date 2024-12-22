@@ -1,10 +1,13 @@
+"use client";
+
 import { Box } from "@mui/material";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import PremierLeagueLogo from "../components/PremierLeagueLogo";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import SignUpForm from "../../components/SignUpForm";
+import { signUp } from "../../firebase/auth"; 
 
-export default function Home() {
+export default function SignUp() {
   return (
     <Box
       sx={{
@@ -20,9 +23,10 @@ export default function Home() {
       <Box sx={{
           flex: 1,
           display: "flex",
+          justifyContent: "center",
           alignItems: "center", 
         }}>
-        <PremierLeagueLogo />
+          <SignUpForm onSignUp={signUp} />
       </Box>
       <Box sx={{ position: "sticky", bottom: 0, zIndex: 1, width: "100%" }}>
         <Footer />

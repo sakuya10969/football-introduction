@@ -3,46 +3,55 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import Button from "@mui/material/Button";
-import { Box } from "@mui/material";
+import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
+import { Box, Button } from "@mui/material";
+import Link from "next/link";
 
 const Header = () => {
     return (
-        <AppBar component="header" position="static" sx={{color: "white", backgroundColor: "black"}}>
-            <Toolbar>
-                {/* ロゴ部分 */}
-                <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                    <MenuIcon />
-                </IconButton>
-                <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                Premier League Big6
-                </Typography>
+        <AppBar component="header" position="static" sx={{ color: "white", backgroundColor: "black" }}>
+            <Toolbar sx={{ justifyContent: "space-between" }}>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 1 }}>
+                        <SportsSoccerIcon fontSize="large" />
+                    </IconButton>
+                    <Typography variant="h6">
+                        Premier League Big6
+                    </Typography>
+                </Box>
 
-                {/* 各チームへのリンクボタン */}
-                <Box>
-                <Button color="inherit" href="/teams/arsenal">
-                    Arsenal
-                </Button>
-                <Button color="inherit" href="/teams/chelsea">
-                    Chelsea
-                </Button>
-                <Button color="inherit" href="/teams/liverpool">
-                    Liverpool
-                </Button>
-                <Button color="inherit" href="/teams/man-city">
-                    Man City
-                </Button>
-                <Button color="inherit" href="/teams/man-united">
-                    Man United
-                </Button>
-                <Button color="inherit" href="/teams/tottenham">
-                    Tottenham
-                </Button>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Link href="/signup" passHref>
+                        <Button
+                            variant="outlined"
+                            sx={{
+                                color: "white",
+                                backgroundColor: "black",
+                                textTransform: "none",
+                                fontSize: "1.1rem",
+                            }}
+                        >
+                            Sign Up
+                        </Button>
+                    </Link>
+                    <Link href="/signin" passHref>
+                        <Button
+                            variant="outlined"
+                            sx={{
+                                color: "white",
+                                backgroundColor: "black",
+                                textTransform: "none",
+                                fontSize: "1.1rem",
+                                ml: 3,
+                            }}
+                        >
+                            Sign In
+                        </Button>
+                    </Link>
                 </Box>
             </Toolbar>
         </AppBar>
     );
-}
+};
 
 export default Header;
