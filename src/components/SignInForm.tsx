@@ -4,6 +4,7 @@ import React from "react";
 import { TextField, Button, Typography } from "@mui/material";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { UserCredential } from "firebase/auth";
+import Link from "next/link";
 
 type handleSignIn = {
   onSignIn: (email: string, password: string) => Promise<UserCredential>;
@@ -64,6 +65,15 @@ const SignInForm: React.FC<handleSignIn> = ({ onSignIn }) => {
         sx={{ backgroundColor: "black", color: "white", textTransform: "none", fontSize: "1.1rem" }}>
         Sign In
       </Button>
+      <Typography sx={{ textAlign: "center", mt: 2 }}>
+        登録がまだの方は{" "}
+        <Link href="/signup" style={{
+          color: "blue",
+          textDecoration: "underline"
+        }}>
+          こちらへ
+        </Link>
+      </Typography>
     </form>
   );
 };
