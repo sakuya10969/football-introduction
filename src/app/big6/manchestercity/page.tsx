@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import { fetchTeamById } from "@/api/api";
 import TeamDataCard from "@/components/TeamDataCard";
 
-const LiverpoolPage = async () => {
-    const data = await fetchTeamById(40);
+const ManchesterCityPage = async () => {
+    const data = await fetchTeamById(50);
 
     return (
         <Box
@@ -18,7 +18,7 @@ const LiverpoolPage = async () => {
         }}
         >
             <Box sx={{ position: "sticky", top: 0, zIndex: 1, width: "100%" }}>
-                <Header heading={"Liverpool"} color={"white"} backgroundColor={"darkred"} />
+                <Header heading={"Manchester City"} color={"white"} backgroundColor={"deepskyblue"} />
             </Box>
             <Box sx={{
                 flex: 1,
@@ -33,17 +33,17 @@ const LiverpoolPage = async () => {
                     founded={data.team.founded}
                     league={"Premier League"}
                     stadium={data.venue.name}
-                    capacity={"Liverpool"}
+                    capacity={"London"}
                     stadiumImage={data.venue.image}
                     color={"white"}
-                    backgroundColor={"darkred"}
+                    backgroundColor={"deepskyblue"}
                 />
             </Box>
             <Box sx={{ position: "sticky", bottom: 0, zIndex: 1, width: "100%" }}>
-                <Footer color={"white"} backgroundColor={"darkred"} />
+                <Footer color={"white"} backgroundColor={"deepskyblue"} />
             </Box>
         </Box>
     );
 }
 
-export default LiverpoolPage;
+export default ManchesterCityPage;

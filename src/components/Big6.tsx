@@ -5,8 +5,8 @@ import TeamCard from "@/components/TeamCard";
 const big6Teams = [
     { name: "Liverpool", logo: "/big6/liverpool.webp", link: "/big6/liverpool" },
     { name: "Chelsea", logo: "/big6/chelsea.webp", link: "/big6/chelsea" },
-    { name: "Manchester City", logo: "/big6/manchester-city.webp", link: "/big6/manchester-city" },
-    { name: "Manchester United", logo: "/big6/manchester-united.webp", link: "/big6/manchester-united" },
+    { name: "Manchester City", logo: "/big6/manchestercity.webp", link: "/big6/manchestercity" },
+    { name: "Manchester United", logo: "/big6/manchesterunited.webp", link: "/big6/manchesterunited" },
     { name: "Arsenal", logo: "/big6/arsenal.webp", link: "/big6/arsenal" },
     { name: "Tottenham", logo: "/big6/tottenham.webp", link: "/big6/tottenham" },
 ];

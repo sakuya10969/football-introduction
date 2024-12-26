@@ -1,17 +1,27 @@
 import axios from 'axios';
 
-const apiClient = axios.create({
-  baseURL: 'https://api-football.com/v3',
-  headers: {
-    'X-Auth-Token': process.env.FOOTBALL_API_KEY,
-  },
-});
-
 export const fetchTeamById = async (teamId: number) => {
+  const apiKey = process.env.NEXT_PUBLIC_FOOTBALL_API_KEY;
+
+  const url = `https://v3.football.api-sports.io/teams?id=${teamId}`;
+
   try {
-    const response = await apiClient.get(`/teams/${teamId}`);
-    return response.data.team;
+    const res = await axios.get(url, {
+      headers: {
+        'X-apisports-key': apiKey,
+      },
+    });
+
+    console.log("API Key:", apiKey);
+    console.log("API Response:", res.data);
+
+    if (!res.data.response || res.data.response.length === 0) {
+      throw new Error(`No team found for teamId: ${teamId}`);
+    }
+
+    return res.data.response[0];
   } catch (error) {
-    throw error;
+    console.error("Error fetching team data:", error.response?.data || error.message);
+    throw new Error("Failed to fetch team data");
   }
 };
