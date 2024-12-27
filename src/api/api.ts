@@ -8,7 +8,7 @@ export const fetchTeamById = async (teamId: number) => {
   try {
     const res = await axios.get(url, {
       headers: {
-        'X-apisports-key': apiKey,
+        'X-Apisports-Key': apiKey,
       },
     });
 

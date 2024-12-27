@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { fetchTeamById } from "@/api/api";
 import TeamDataCard from "@/components/TeamDataCard";
 
-const ChelseaPage = async () => {
+const Chelsea = async () => {
     const data = await fetchTeamById(49);
 
     return (
@@ -46,4 +46,4 @@ const ChelseaPage = async () => {
     );
 }
 
-export default ChelseaPage;
+export default Chelsea;

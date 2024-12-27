@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { fetchTeamById } from "@/api/api";
 import TeamDataCard from "@/components/TeamDataCard";
 
-const LiverpoolPage = async () => {
+const Liverpool = async () => {
     const data = await fetchTeamById(40);
 
     return (
@@ -46,4 +46,4 @@ const LiverpoolPage = async () => {
     );
 }
 
-export default LiverpoolPage;
+export default Liverpool;

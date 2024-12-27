@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import { fetchTeamById } from "@/api/api";
 import TeamDataCard from "@/components/TeamDataCard";
 
-const ManchesterCity = async () => {
-    const data = await fetchTeamById(50);
+const ManchesterUnited = async () => {
+    const data = await fetchTeamById(33);
 
     return (
         <Box
@@ -18,7 +18,7 @@ const ManchesterCity = async () => {
         }}
         >
             <Box sx={{ position: "sticky", top: 0, zIndex: 1, width: "100%" }}>
-                <Header heading={"Manchester City"} color={"white"} backgroundColor={"deepskyblue"} />
+                <Header heading={"Manchester United"} color={"white"} backgroundColor={"red"} />
             </Box>
             <Box sx={{
                 flex: 1,
@@ -36,14 +36,14 @@ const ManchesterCity = async () => {
                     capacity={"London"}
                     stadiumImage={data.venue.image}
                     color={"white"}
-                    backgroundColor={"deepskyblue"}
+                    backgroundColor={"red"}
                 />
             </Box>
             <Box sx={{ position: "sticky", bottom: 0, zIndex: 1, width: "100%" }}>
-                <Footer color={"white"} backgroundColor={"deepskyblue"} />
+                <Footer color={"white"} backgroundColor={"red"} />
             </Box>
         </Box>
     );
 }
 
-export default ManchesterCity;
+export default ManchesterUnited;
